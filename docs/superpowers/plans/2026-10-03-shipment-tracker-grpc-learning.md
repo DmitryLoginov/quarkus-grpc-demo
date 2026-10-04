@@ -111,7 +111,8 @@
 **Interfaces:**
 
 - Adds RPC: `AddCheckpoint(AddCheckpointRequest) returns (ShipmentEvent)`.
-- Adds `ShipmentRepository.existsByTrackingNumber(String trackingNumber) -> boolean` for duplicate detection.
+- Adds an atomic repository operation that saves only when the tracking number is absent.
+- Adds an atomic repository update operation for one shipment ID.
 - `ShipmentUpdate` contains the updated domain `Shipment` and its accepted `Checkpoint`.
 - `ShipmentApplicationService.addCheckpoint(String shipmentId, ShipmentStatus status, String location, Instant occurredAt) -> ShipmentUpdate`
 - Repository update for one shipment is atomic.
