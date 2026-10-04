@@ -8,19 +8,19 @@
 
 - Дизайн: `docs/superpowers/specs/2026-10-03-shipment-tracker-grpc-learning-design.md`
 - План: `docs/superpowers/plans/2026-10-03-shipment-tracker-grpc-learning.md`
-- Текущее ТЗ: `docs/stages/00-project-foundation.md`
+- Текущее ТЗ: `docs/stages/01-unary-create-get.md`
 
 При расхождении конкретное ТЗ текущего этапа уточняет план, а дизайн определяет границы проекта. Новое решение, меняющее дизайн, сначала согласовывается с пользователем и фиксируется в документации.
 
 ## Текущее состояние
 
-- Current stage: `Stage 0 — Project foundation`
+- Current stage: `Stage 1 — Unary create/get`
 - Status: `READY`
 - Owner of next action: `USER`
-- Current assignment: `docs/stages/00-project-foundation.md`
-- Next action: выполнить `docs/stages/00-project-foundation.md` и передать изменения на ревью.
-- Last completed checkpoint: дизайн учебного проекта согласован.
-- Last updated: `2026-10-03`
+- Current assignment: `docs/stages/01-unary-create-get.md`
+- Next action: выполнить `docs/stages/01-unary-create-get.md` и передать изменения на ревью.
+- Last completed checkpoint: Stage 0 — Quarkus build и генерация кода из proto.
+- Last updated: `2026-10-04`
 
 Допустимые статусы этапа: `READY`, `IN_PROGRESS`, `IN_REVIEW`, `CHANGES_REQUESTED`, `DONE`.
 
@@ -28,8 +28,8 @@
 
 | Stage | Результат | Статус |
 |---:|---|---|
-| 0 | Quarkus build и генерация кода из первого proto | READY |
-| 1 | Unary create/get через in-memory repository | BLOCKED_BY_STAGE_0 |
+| 0 | Quarkus build и генерация кода из первого proto | DONE |
+| 1 | Unary create/get через in-memory repository | READY |
 | 2 | Validation, `AddCheckpoint` и gRPC statuses | BLOCKED_BY_STAGE_1 |
 | 3 | Server streaming и cancellation cleanup | BLOCKED_BY_STAGE_2 |
 | 4 | Client streaming и partial rejection | BLOCKED_BY_STAGE_3 |

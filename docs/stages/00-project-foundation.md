@@ -8,7 +8,7 @@
 
 `.proto` — это исходный контракт. Из него `protoc` и gRPC plugins генерируют immutable message classes, service descriptors, обычные gRPC stubs и Mutiny API. В Quarkus генерация включается в стандартный Maven lifecycle: исходники лежат в `src/main/proto`, а результат появляется в `target/generated-sources/grpc`.
 
-Quarkus BOM фиксирует совместимый набор версий расширений. Поэтому `quarkus-grpc`, `quarkus-junit5` и другие Quarkus dependencies не должны получать собственные версии.
+Quarkus BOM фиксирует совместимый набор версий расширений. Поэтому `quarkus-grpc`, `quarkus-junit` и другие Quarkus dependencies не должны получать собственные версии.
 
 Для сервиса Quarkus создаёт Mutiny-интерфейс по имени proto service. Позднее класс `ShipmentGrpcService` реализует этот интерфейс и получает `@GrpcService`. Unary RPC представлен методом, который принимает generated request и возвращает `Uni<GeneratedResponse>`.
 
@@ -35,7 +35,7 @@ Quarkus BOM фиксирует совместимый набор версий р
 - добавь импорт BOM `io.quarkus.platform:quarkus-bom:3.40.1`;
 - добавь `io.quarkus:quarkus-grpc`;
 - добавь `io.quarkus:quarkus-rest`, необходимый выбранному общему HTTP/gRPC server;
-- добавь test dependency `io.quarkus:quarkus-junit5`;
+- добавь test dependency `io.quarkus:quarkus-junit`;
 - настрой `io.quarkus.platform:quarkus-maven-plugin` версии `${quarkus.platform.version}` как build extension с goals `build`, `generate-code` и `generate-code-tests`;
 - настрой Maven Compiler Plugin с параметром `parameters=true`;
 - настрой Maven Surefire Plugin для JUnit 5.

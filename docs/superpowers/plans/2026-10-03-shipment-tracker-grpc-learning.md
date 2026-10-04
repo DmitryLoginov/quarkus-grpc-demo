@@ -71,6 +71,7 @@
 **Files:**
 
 - Create: `src/main/java/dev/ldv/shipment/domain/Shipment.java`
+- Create: `src/main/java/dev/ldv/shipment/domain/ShipmentStatus.java`
 - Create: `src/main/java/dev/ldv/shipment/application/ShipmentApplicationService.java`
 - Create: `src/main/java/dev/ldv/shipment/repository/ShipmentRepository.java`
 - Create: `src/main/java/dev/ldv/shipment/repository/InMemoryShipmentRepository.java`
@@ -82,7 +83,6 @@
 
 - `ShipmentRepository.save(Shipment shipment) -> Shipment`
 - `ShipmentRepository.findById(String id) -> Optional<Shipment>`
-- `ShipmentRepository.existsByTrackingNumber(String trackingNumber) -> boolean`
 - `ShipmentApplicationService.create(String trackingNumber, String origin, String destination) -> Shipment`
 - `ShipmentApplicationService.getById(String id) -> Shipment`
 - `ShipmentGrpcService implements dev.ldv.shipment.grpc.ShipmentService`
@@ -102,7 +102,6 @@
 
 - Modify: `src/main/proto/shipment.proto`
 - Modify: application, repository, mapper and gRPC service files from Task 1
-- Create: `src/main/java/dev/ldv/shipment/domain/ShipmentStatus.java`
 - Create: `src/main/java/dev/ldv/shipment/domain/Checkpoint.java`
 - Create: `src/main/java/dev/ldv/shipment/domain/ShipmentUpdate.java`
 - Create: `src/main/java/dev/ldv/shipment/domain/ShipmentException.java`
@@ -112,6 +111,7 @@
 **Interfaces:**
 
 - Adds RPC: `AddCheckpoint(AddCheckpointRequest) returns (ShipmentEvent)`.
+- Adds `ShipmentRepository.existsByTrackingNumber(String trackingNumber) -> boolean` for duplicate detection.
 - `ShipmentUpdate` contains the updated domain `Shipment` and its accepted `Checkpoint`.
 - `ShipmentApplicationService.addCheckpoint(String shipmentId, ShipmentStatus status, String location, Instant occurredAt) -> ShipmentUpdate`
 - Repository update for one shipment is atomic.
