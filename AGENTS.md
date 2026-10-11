@@ -8,19 +8,19 @@
 
 - Дизайн: `docs/superpowers/specs/2026-10-03-shipment-tracker-grpc-learning-design.md`
 - План: `docs/superpowers/plans/2026-10-03-shipment-tracker-grpc-learning.md`
-- Текущее ТЗ: `docs/stages/02-validation-status-errors.md`
+- Текущее ТЗ: `docs/stages/03-server-streaming-cancellation.md`
 
 При расхождении конкретное ТЗ текущего этапа уточняет план, а дизайн определяет границы проекта. Новое решение, меняющее дизайн, сначала согласовывается с пользователем и фиксируется в документации.
 
 ## Текущее состояние
 
-- Current stage: `Stage 2 — Validation and status errors`
+- Current stage: `Stage 3 — Server streaming and cancellation cleanup`
 - Status: `READY`
 - Owner of next action: `USER`
-- Current assignment: `docs/stages/02-validation-status-errors.md`
-- Next action: закоммитить принятый Stage 1, затем выполнить `docs/stages/02-validation-status-errors.md`.
-- Last completed checkpoint: Stage 1 — unary create/get через in-memory repository.
-- Last updated: `2026-10-04`
+- Current assignment: `docs/stages/03-server-streaming-cancellation.md`
+- Next action: закоммитить принятый Stage 2, затем выполнить `docs/stages/03-server-streaming-cancellation.md`.
+- Last completed checkpoint: Stage 2 — validation, `AddCheckpoint` и gRPC statuses.
+- Last updated: `2026-10-11`
 
 Допустимые статусы этапа: `READY`, `IN_PROGRESS`, `IN_REVIEW`, `CHANGES_REQUESTED`, `DONE`.
 
@@ -30,8 +30,8 @@
 |---:|---|---|
 | 0 | Quarkus build и генерация кода из первого proto | DONE |
 | 1 | Unary create/get через in-memory repository | DONE |
-| 2 | Validation, `AddCheckpoint` и gRPC statuses | READY |
-| 3 | Server streaming и cancellation cleanup | BLOCKED_BY_STAGE_2 |
+| 2 | Validation, `AddCheckpoint` и gRPC statuses | DONE |
+| 3 | Server streaming и cancellation cleanup | READY |
 | 4 | Client streaming и partial rejection | BLOCKED_BY_STAGE_3 |
 | 5 | Bidirectional courier session | BLOCKED_BY_STAGE_4 |
 | 6 | Metadata, deadlines и cancellation propagation | BLOCKED_BY_STAGE_5 |

@@ -24,7 +24,7 @@ Proto field numbers являются частью wire contract. Существ�
 ## Материалы
 
 - [gRPC: Status codes](https://grpc.io/docs/guides/status-codes/)
-- [Quarkus: Handling errors](https://quarkus.io/guides/grpc-service-implementation/#handling-errors)
+- [Quarkus: Custom exception handling](https://quarkus.io/guides/grpc-service-consumption/#custom-exception-handling)
 - [SmallRye Mutiny: How to handle failures](https://smallrye.io/smallrye-mutiny/latest/tutorials/handling-failures/)
 - [Protobuf: Updating a message type](https://protobuf.dev/programming-guides/proto3/#updating)
 - [Java `ConcurrentHashMap.compute`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html#compute(K,java.util.function.BiFunction))

@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package shipment.v1;
 
+import "google/protobuf/timestamp.proto";
+
 // separate generated .java files for each element
 option java_multiple_files = true;
 // package name for generated .java files
@@ -34,6 +36,7 @@ message Shipment {
   string origin = 3;
   string destination = 4;
   ShipmentStatus status = 5;
+  repeated Checkpoint checkpoints = 6;
 }
 
 service ShipmentService {
@@ -41,4 +44,22 @@ service ShipmentService {
       returns (Shipment);
   rpc GetShipment(GetShipmentRequest)
       returns (Shipment);
+  rpc AddCheckpoint(AddCheckpointRequest)
+      returns (ShipmentEvent);
+}
+
+message Checkpoint {
+  string shipment_id = 1;
+  ShipmentStatus status = 2;
+  string location = 3;
+  google.protobuf.Timestamp occurred_at = 4;
+}
+
+message AddCheckpointRequest {
+  Checkpoint checkpoint = 1;
+}
+
+message ShipmentEvent {
+  Shipment shipment = 1;
+  Checkpoint checkpoint = 2;
 }
